@@ -29,7 +29,7 @@ confirmBtn.addEventListener("click", () => {
   const today = new Date();
   const date = today.toISOString().split("T")[0]; // yyyy-mm-dd
 
-  // إنشاء عنصر تاسك جديد
+
   const task = document.createElement("div");
   task.classList.add("task");
   task.innerHTML = `
@@ -40,21 +40,22 @@ confirmBtn.addEventListener("click", () => {
       <button class="delete-btn">Delet</button>
     </div>`;
 
-  // زر الحذف
+
   task.querySelector(".delete-btn").addEventListener("click", () => {
     task.remove();
   });
 
-  // زر الإنتهاء
+
   task.querySelector(".done-btn").addEventListener("click", () => {
     task.style.opacity = "0.6";
     task.style.textDecoration = "line-through";
   });
 
-  // إضافة التاسك إلى الصفحة
+
   taskContainer.appendChild(task);
 
-  // تنظيف وإغلاق البوب أب
+
   taskInput.value = "";
   popup.style.display = "none";
+
 });
